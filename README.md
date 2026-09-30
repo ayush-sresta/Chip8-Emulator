@@ -1,23 +1,24 @@
 # CHIP-8 Emulator
 
-A CHIP-8 emulator written in C.
+A CHIP-8 emulator written from scratch in C.
 
 ## About
 
-This is a small emulator built from scratch to understand how CHIP-8 works, from memory and registers to fetching and executing instructions.
+This project is a simple CHIP-8 emulator built to explore how a virtual machine works at a low level. It implements the CHIP-8 CPU, memory, registers, stack, timers, display, and input.
 
 ## Features
 
+* CHIP-8 instruction set
 * 4 KB memory
 * 16 general-purpose registers
 * Index register
 * Program counter
-* Stack
+* 16-level stack
 * Delay and sound timers
 * 64×32 display
 * 16-key keypad
-* CHIP-8 instruction set
 * ROM loading
+* SDL2 rendering and input
 
 ## Built With
 
@@ -33,7 +34,6 @@ cd chip8
 
 mkdir build
 cd build
-
 cmake ..
 cmake --build .
 ```
@@ -42,17 +42,4 @@ cmake --build .
 
 ```bash
 ./chip8 path/to/rom.ch8
-```
-
-## CHIP-8 Architecture
-
-```text
-Memory       4096 bytes
-Registers    V0 - VF
-Index        I
-PC           Program Counter
-Stack        16 levels
-Timers       Delay + Sound
-Display      64 × 32
-Keyboard     16 keys
 ```
