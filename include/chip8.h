@@ -22,4 +22,8 @@ typedef struct {
     __uint8_t keypad[16];
 } Chip8;
 
+
+void chip8_init(Chip8* chip8);
+void chip8_load_rom(Chip8* chip8, const char* filename);
+
 #endif
