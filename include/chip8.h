@@ -2,6 +2,8 @@
 #define CHIP8_H
 
 #include <stdio.h>
+#include <stdint.h>
+
 
 typedef struct {
     __uint8_t memory[4096];
@@ -25,5 +27,6 @@ typedef struct {
 
 void chip8_init(Chip8* chip8);
 void chip8_load_rom(Chip8* chip8, const char* filename);
+__uint16_t chip8_fetch_opcode(Chip8* chip);
 
 #endif

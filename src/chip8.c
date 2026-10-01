@@ -50,5 +50,16 @@ void chip8_load_rom(Chip8 *chip8, const char *filename)
 
     fclose(file);
 
-    printf("Loaded %zu bytes\n", read_bytes);
+    printf("blah: 0x%02X\n", chip8->memory[0x200]);
+}
+
+__uint16_t chip8_fetch_opcode(Chip8 *chip8)
+{
+    __uint16_t opcode;
+
+    opcode = chip8->memory[chip8->pc] << 8 | chip8->memory[chip8->pc + 1];
+    
+    chip8->pc += 2;
+
+    return opcode;
 }
