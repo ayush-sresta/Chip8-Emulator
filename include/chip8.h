@@ -26,7 +26,11 @@ typedef struct {
 
 
 void chip8_init(Chip8* chip8);
+
 void chip8_load_rom(Chip8* chip8, const char* filename);
-__uint16_t chip8_fetch_opcode(Chip8* chip);
+
+__uint16_t chip8_fetch_opcode(Chip8* chip8);
+
+void chip8_execute(Chip8* chip8, __uint16_t opcode);
 
 #endif
